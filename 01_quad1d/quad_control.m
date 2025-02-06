@@ -5,7 +5,7 @@ function u = quad_control(Hz,H,Vy,arm)
 
   % Реалізація контролера
   u = Kp*(Hz-H)-Kd*Vy + sqrt(arm.g*arm.m/arm.kt);
-  
+
   % Обмеження керування
   u(u > arm.u_max) = arm.u_max;
   u(u < arm.u_min) = arm.u_min;
