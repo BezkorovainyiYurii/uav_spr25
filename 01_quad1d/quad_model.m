@@ -12,7 +12,7 @@ function dx = quad_model (t,x,traj,control,arm)
   dV = (Fy-arm.m*arm.g)/arm.m;
   dH = Vy;
 
-  dx(1) = dH;
-  dx(2) = dV;
+  dx(1,1) = dH;
+  dx(1,2) = dV;
 
 end
