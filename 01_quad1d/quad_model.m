@@ -13,6 +13,6 @@ function dx = quad_model (t,x,traj,control,arm)
   dH = Vy;
 
   dx(1,1) = dH;
-  dx(1,2) = dV;
+  dx(2,1) = dV;
 
 end
