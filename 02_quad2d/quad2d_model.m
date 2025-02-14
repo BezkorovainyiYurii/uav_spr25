@@ -6,8 +6,8 @@ function dx = quad2d_model (t,x,traj,control,arm)
   Pa = x(5);
   Pv = x(6);
   
-  atm = atmosphere(Y);
-  atm0= atmosphere(0);
+  atm = atmosphere(Y,15);
+  atm0= atmosphere(0,15);
   [Xz,Yz]=traj(t);
   [u1,u2,~] = quad2d_control(Yz,Xz,Y,X,Vy,Vx,Pa,Pv,arm);
   
@@ -28,11 +28,11 @@ function dx = quad2d_model (t,x,traj,control,arm)
   dVx = Fy*sin(Pa)/arm.m;
   dX = Vx;
   
-  dx(1) = dY;
-  dx(2) = dVy;
-  dx(3) = dX;
-  dx(4) = dVx;
-  dx(5) = dPa;
-  dx(6) = dPv;
+  dx(1,1) = dY;
+  dx(2,1) = dVy;
+  dx(3,1) = dX;
+  dx(4,1) = dVx;
+  dx(5,1) = dPa;
+  dx(6,1) = dPv;
  
 end

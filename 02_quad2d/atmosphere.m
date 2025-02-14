@@ -1,4 +1,4 @@
-function atm=atmosphere(H=0,t0=15)
+function atm=atmosphere(H,t0)
 % Модель стандартної атмосфери 
 % Висоти: 0 - 11000 м
 % function atm=atmosphere([H,[to]])
