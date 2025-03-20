@@ -1,7 +1,7 @@
 clear all
 
 % Характеристики гвинта Plantraco 100x80
-% https://m-selig.ae.illinois.edu/props/volume-2/propDB-volume-2.html#Plantraco
+% % https://m-selig.ae.illinois.edu/props/volume-2/propDB-volume-2.html#Plantraco
 
 % Геометричні характеристики нормовані
 % https://m-selig.ae.illinois.edu/props/volume-2/data/pl_100x80_geom.txt
@@ -98,12 +98,19 @@ grid on;
 % Ефективність гвинта
 JF=[0:0.01:1.0];
 figure(4)
+subplot(2,1,1);
 plot(JF,interp1(J,eta,JF,"pchip"));
 xlabel('J');
 ylabel('\eta');
 title("Коефіцієнт корисної дії");
 grid on;
 
+subplot(2,1,2);
+plot(J,T);
+xlabel('J');
+ylabel("T, [Н]");
+title("Тяга гвинта");
+grid on;
 
 
 
